@@ -1,5 +1,8 @@
 /*
-IP whitelisting is a common practice for securing your internal-facing apps or tools hosted in the cloud. This Lambda blueprint automates the whitelisting process, enabling developers to whitelist IPs themselves and notifying production/security engineers. The whitelisted IPs are captured in a JSON file (a.k.a. truth file) in GitHub, access and version controlled.
+IP whitelisting is a common practice for securing your internal-facing apps or tools hosted in the cloud.
+This Lambda blueprint automates the whitelisting process, enabling developers to whitelist IPs themselves and 
+notifying production/security engineers the changes to be reviewed.
+The whitelisted IPs are captured in a JSON file (a.k.a. truth file) in GitHub, access and version controlled.
 
 Setup:
 1) Create and add your JSON/truth file to repository
