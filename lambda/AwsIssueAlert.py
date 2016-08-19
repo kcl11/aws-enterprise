@@ -31,7 +31,7 @@ import urllib2
 # CAREFUL HERE WHEN WORKING WITH PUBLIC REPO
 
 FEED_URL = 'http://status.aws.amazon.com/rss/ec2-us-east-1.rss'
-SNS_ARN = 'arn:aws:sns:us-east-1:827123455874:NotifyMe'
+SNS_ARN = ''
 
 # ---END CONFIG---
 
