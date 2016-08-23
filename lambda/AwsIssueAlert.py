@@ -50,6 +50,7 @@ def lambda_handler(event, context):
   # e.g. <pubDate>Sun, 14 Aug 2016 04:43:25 PDT</pubDate>
   elem = rss.find('channel/item')
   pub_date = elem.findtext('pubDate')
+  title = elem.findtext('title')
 
   now = datetime.now()
   now_minus = datetime.now() - timedelta( hours=interval )
@@ -62,18 +63,16 @@ def lambda_handler(event, context):
   print pub_date_utc
      
   if pub_date_utc >= now_minus:
-    ret['default'] = elem.findtext('title') 
-
-  if ret:
+    ret['default'] = FEED_URL
     response = sns_client.publish(
       TopicArn=SNS_ARN,
       MessageStructure='json',
-      Subject=FEED_URL,
+      Subject=title,
       Message=json.dumps(ret)
     )
     print 'Thumbs down'
   else:
     print 'Thumbs up'
     
-  return ret
+  return FEED_URL
 
