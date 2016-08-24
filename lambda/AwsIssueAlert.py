@@ -62,7 +62,7 @@ def lambda_handler(event, context):
   pub_date_utc = datetime.strptime(time, '%a, %d %b %Y %H:%M:%S ') - timedelta( hours=utc_offsets[timezone] )  
   print pub_date_utc
      
-  if pub_date_utc >= now_minus:
+  if pub_date_utc > now_minus:
     ret['default'] = FEED_URL
     response = sns_client.publish(
       TopicArn=SNS_ARN,
