@@ -46,9 +46,8 @@ sns_client = boto3.client('sns')
 def lambda_handler(event, context):
   ret = {}
   rss = parse( urllib2.urlopen( FEED_URL ) ).getroot()
-  
-  # e.g. <pubDate>Sun, 14 Aug 2016 04:43:25 PDT</pubDate>
   elem = rss.find('channel/item')
+  # e.g. <pubDate>Sun, 14 Aug 2016 04:43:25 PDT</pubDate>
   pub_date = elem.findtext('pubDate')
   title = elem.findtext('title')
 
