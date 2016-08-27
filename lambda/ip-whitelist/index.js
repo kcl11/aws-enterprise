@@ -35,15 +35,15 @@ let github = new GithubApi({ version: '3.0.0' });
 
 // --- CONFIG ---
 // CAREFUL HERE WHEN WORKING WITH PUBLIC REPO
+
 let truthFile = ''; // path + file name
-
 let securityGroups = ['']; // to be used for whitelisting
-
 let gitAccessToken = '';
 let gitUsername = '';
 let gitRepo = '';
 let gitBranch = '';
-// --- end CONFIG ---
+
+// --- END CONFIG ---
 
 exports.handler = (event, context, callback) => {
     //console.log('Received GitHub event:', JSON.stringify(event, null, 2));
