@@ -9,7 +9,6 @@ import java.util.Base64;
 
 /**
  * Lambda config handler => org.example.Decrypt::myHandler
- *
  */
 public class Decrypt {
 
